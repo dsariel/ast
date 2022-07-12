@@ -1,0 +1,32 @@
+Install dependances:
+JDK:   https://www.itzgeek.com/how-tos/linux/fedora-how-tos/install-java-jdk-on-fedora.html 
+maven: https://tecadmin.net/install-apache-maven-on-fedora
+
+Compile:
+mvn compile
+
+Run:
+mvn -e exec:java [variable] [path to groovy snippet>
+
+View AST:
+- install gradle: https://tecadmin.net/install-gradle-fedora/
+- update settings.gradle to include
+gradleEnterprise {
+    buildScan {
+        termsOfServiceUrl = 'https://gradle.com/terms-of-service'
+        apply from: 'gradle/build-scans.gradle'
+    }
+    allowUntrustedServer = true
+} 
+- ./gradlew groovy-console:build
+- ./gradlew groovy-console:console &
+ 
+Additional info:
+https://stackoverflow.com/questions/32244456/how-to-get-all-groovy-variables-with-the-last-values-using-reflection
+A Code Structure Visualization Tool for Groovy  - https://uh-ir.tdl.org/bitstream/handle/10657/675/SAHA-THESIS-2013.pdf?sequence=1&isAllowed=y
+Unleashing the power of AST transformations: https://melix.github.io/ast-workshop/
+Groovy tutorial: https://leanpub.com/groovytutorial/read
+Groovy AST: https://www.mo4tech.com/groovy-ast.html
+Executing Groovy Scripts in a Maven Build: https://www.youtube.com/watch?v=rDv2c13j3vg
+AST transformations: https://www.youtube.com/watch?v=GVfrNwTBpUM
+https://stackoverflow.com/questions/40431213/how-to-traverse-ast-tree
